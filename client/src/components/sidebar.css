@@ -4,6 +4,7 @@
 }
 
 .side-menu{
+    flex-direction: row;
     position: fixed;
     background: #000;
     width: 300px;

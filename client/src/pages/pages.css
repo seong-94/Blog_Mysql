@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 .auth {
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -11,18 +11,16 @@
     height: 100vh;
 }
 h1 {
-    font-size:20px;
+    font-size: 20px;
     color: black;
     margin-bottom: 20px;
-    
-
 }
 form {
     display: flex;
     flex-direction: column;
     padding: 10px;
     background-color: white;
-    gap: 20px   ;
+    gap: 20px;
     width: 200px;
     border-radius: 25px;
 }
@@ -31,7 +29,6 @@ input {
     border: none;
     border-bottom: 1px solid gray;
 }
-
 button {
     padding: 10px;
     border: none;
@@ -40,6 +37,8 @@ button {
     color: white;
 }
 span {
-    font-size:  12px;
+    font-size: 12px;
     text-align: center;
 }
+
+

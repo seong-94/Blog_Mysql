@@ -17,8 +17,10 @@ function App() {
       path: "/",
       element: (
         <div>
-          {/* <Home /> */}
           <Sidebar />
+          <div>
+            <Home />
+          </div>
         </div>
       ),
     },
