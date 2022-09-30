@@ -4,12 +4,14 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
+import Navbar from "./components/Navbar";
+import "./style.scss";
+import Footer from "./components/Footer";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,10 +19,9 @@ function App() {
       path: "/",
       element: (
         <div>
-          <Sidebar />
-          <div>
-            <Home />
-          </div>
+          <Navbar />
+          <Home />
+          <Footer />
         </div>
       ),
     },
@@ -33,7 +34,7 @@ function App() {
       element: <Login />,
     },
     {
-      path: "/Single",
+      path: "/single",
       element: <Single />,
     },
     {
@@ -43,7 +44,7 @@ function App() {
   ]);
 
   return (
-    <div className="App">
+    <div className="app">
       <div className="container">
         <RouterProvider router={router} />
       </div>
