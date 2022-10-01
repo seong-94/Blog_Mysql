@@ -1,9 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -20,10 +15,24 @@ function App() {
       element: (
         <div>
           <Navbar />
-          <Home />
+          <Outlet />
           <Footer />
         </div>
       ),
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/post/:id",
+          element: <Single />,
+        },
+        {
+          path: "/write",
+          element: <Write />,
+        },
+      ],
     },
     {
       path: "/register",
@@ -32,14 +41,6 @@ function App() {
     {
       path: "/login",
       element: <Login />,
-    },
-    {
-      path: "/single",
-      element: <Single />,
-    },
-    {
-      path: "/write",
-      element: <Write />,
     },
   ]);
 
