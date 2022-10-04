@@ -5,8 +5,8 @@ import Register from "./pages/Register";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
 import Navbar from "./components/Navbar";
-import "./style.scss";
 import Footer from "./components/Footer";
+import "./style.scss";
 
 function App() {
   const router = createBrowserRouter([
@@ -25,7 +25,7 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/post/:id",
+          path: "/post",
           element: <Single />,
         },
         {
