@@ -1,8 +1,9 @@
 import mysql from "mysql";
 
 export const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  passwords: "godqhr1553!",
-  database: "local_blog",
+  hostname: "blogdb.cxemfame1iht.ap-northeast-2.rds.amazonaws.com",
+  username: "admin",
+  port: 3306,
+  password: "godqhr1553",
+  database: "sys",
 });
