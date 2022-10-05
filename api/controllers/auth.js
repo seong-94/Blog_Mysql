@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 export const register = (req, res) => {
   //유저 확인
-  const q = "SELECT * FROM users WHERE email = ? OR username = ? ";
+  const q = "SELECT * FROM users WHERE email = ? OR username = ?";
 
   db.query(q, [req.body.email, req.body.username], (err, data) => {
     if (err) return res.status(500).json(err);
@@ -17,7 +17,7 @@ export const register = (req, res) => {
     const values = [req.body.username, req.body.email, hash];
 
     db.query(q, [values], (err, data) => {
-      if (err) return res.json(err);
+      if (err) return res.status(500).json(err);
       return res.json(200).json("아이디가 생성 돼었습니다.");
     });
   });

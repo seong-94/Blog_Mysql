@@ -1,25 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Register() {
+const Register = () => {
   const [inputs, setInputs] = useState({
     username: "",
     email: "",
     password: "",
   });
+  const [err, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handelSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/register", inputs);
-      console.log(res);
+      await axios.post("http://localhost:4000/api/auth/register", inputs);
+      navigate("/login");
     } catch (err) {
-      console.log(err);
+      setError(err.response.data);
     }
   };
 
@@ -28,31 +32,34 @@ function Register() {
       <h1>Register</h1>
       <form>
         <input
-          rea
+          required
           type="text"
-          placeholder="Username"
+          placeholder="username"
           name="username"
           onChange={handleChange}
         />
         <input
+          required
           type="email"
-          placeholder="Email"
+          placeholder="email"
           name="email"
           onChange={handleChange}
         />
         <input
-          type="text"
-          placeholder="Password"
+          required
+          type="password"
+          placeholder="password"
           name="password"
           onChange={handleChange}
         />
-        <button onClick={handelSubmit}>로그인</button>
+        <button onClick={handleSubmit}>Register</button>
+        {err && <p>{err}</p>}
         <span>
-          아이디가 있으십니까? <Link to="/login">로그인 하기</Link>
+          Do you have an account? <Link to="/login">Login</Link>
         </span>
       </form>
     </div>
   );
-}
+};
 
 export default Register;
