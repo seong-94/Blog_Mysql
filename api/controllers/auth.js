@@ -2,30 +2,25 @@ import { db } from "../db.js";
 import bcrypt from "bcryptjs";
 
 export const register = (req, res) => {
-  console.log("Error");
-  //유저 확인
-  const q = "SELECT * FROM user WHERE email = ? OR username = ?";
-  console.log("Error q", q);
+  //CHECK EXISTING USER
+  const q = "SELECT * FROM users WHERE email = ? OR username = ?";
 
   db.query(q, [req.body.email, req.body.username], (err, data) => {
     if (err) {
-      console.log("Error db", err);
       return res.status(500).json(err);
     }
-    if (data.length) return res.status(409).json("존재하는 아이디 입니다.");
+    if (data.length) return res.status(409).json("User already exists!");
 
-    // 비밀 번호 암호화
+    //Hash the password and create a user
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
 
-    console.log("Error", salt, hash);
     const q = "INSERT INTO users(`username`,`email`,`password`) VALUES (?)";
     const values = [req.body.username, req.body.email, hash];
 
-    console.log("Error q values", q, values);
     db.query(q, [values], (err, data) => {
       if (err) return res.status(500).json(err);
-      return res.json(200).json("아이디가 생성 돼었습니다.");
+      return res.status(200).json("User has been created.");
     });
   });
 };
