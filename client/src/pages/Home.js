@@ -1,28 +1,35 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const posts = [
-  //더미 데이터 디자인 체크를 위한
-  {
-    id: 1,
-    title: "여기는 제목이 들어갈 위치입니다.",
-    desc: "여기는 내용이 들어갈 위치입니다.",
-    img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    id: 2,
-    title: "여기는 제목이 들어갈 위치입니다.",
-    desc: "여기는 내용이 들어갈 위치입니다.",
-    img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    id: 3,
-    title: "여기는 제목이 들어갈 위치입니다.",
-    desc: "여기는 내용이 들어갈 위치입니다.",
-    img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-];
+// const posts = [
+//더미 데이터 디자인 체크를 위한
+//   {
+//     id: 1,
+//     title: "여기는 제목이 들어갈 위치입니다.",
+//     desc: "여기는 내용이 들어갈 위치입니다.",
+//     img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//   },
+//   {
+//     id: 2,
+//     title: "여기는 제목이 들어갈 위치입니다.",
+//     desc: "여기는 내용이 들어갈 위치입니다.",
+//     img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//   },
+//   {
+//     id: 3,
+//     title: "여기는 제목이 들어갈 위치입니다.",
+//     desc: "여기는 내용이 들어갈 위치입니다.",
+//     img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//   },
+// ];
 function Home() {
+  const [posts, setPosts] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+
+  //   }
+  // }
   return (
     <div className="home">
       <div className="posts">

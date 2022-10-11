@@ -25,7 +25,6 @@ export const register = (req, res) => {
     });
   });
 };
-
 export const login = (req, res) => {
   //CHECK USER
 
@@ -42,7 +41,7 @@ export const login = (req, res) => {
     );
 
     if (!isPasswordCorrect) {
-      return res.status(400).json("틀린 비밀 번호 입니다.");
+      return res.status(400).json("incorrected password or userID ");
     }
 
     const token = jwt.sign({ id: data[0].id }, "jwtkey");

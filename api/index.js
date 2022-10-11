@@ -22,5 +22,5 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
 app.listen(port, () => {
-  console.log("Connected!");
+  console.log("접속완료!");
 });

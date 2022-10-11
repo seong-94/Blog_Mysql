@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 
-const Login = () => {
+function Login() {
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -53,6 +53,6 @@ const Login = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Login;

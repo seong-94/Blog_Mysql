@@ -70,7 +70,7 @@ $lightGreen: #b9e7e7;
         align-items: center;
         justify-content: space-between;
 
-        width: 1024px; //추후 변경 예정
+        width: 100%; //추후 변경 예정
 
         .logo {
           img {
@@ -83,7 +83,7 @@ $lightGreen: #b9e7e7;
           gap: 10px;
 
           h6 {
-            font-size: 16px;
+            font-size: 0.7em;
             font-weight: 300;
           }
 
