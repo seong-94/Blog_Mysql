@@ -72,6 +72,10 @@ $lightGreen: #b9e7e7;
 
         width: 100%; //추후 변경 예정
 
+        .username {
+          // font-size: 100%;
+          color: yellowgreen;
+        }
         .logo {
           img {
             width: 120px;
@@ -146,7 +150,7 @@ $lightGreen: #b9e7e7;
 
             img {
               width: 70%;
-              max-height: 250px;
+              max-height: 100%;
               object-fit: cover;
             }
           }
@@ -247,6 +251,189 @@ $lightGreen: #b9e7e7;
             display: flex;
             align-items: center;
             gap: 2px;
+          }
+        }
+      }
+    }
+    //SINGLE
+
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+          width: 50%;
+          height: 50%;
+          object-fit: cover;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .edit {
+          display: flex;
+          gap: 5px;
+          margin-top: 1.5%;
+
+          img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+          }
+        }
+
+        h1 {
+          font-size: 42px;
+          color: #333;
+        }
+
+        p {
+          text-align: justify;
+          line-height: 30px;
+        }
+      }
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        h1 {
+          font-size: 20px;
+          color: #555;
+        }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          img {
+            width: 55%;
+            height: 55%;
+            object-fit: cover;
+          }
+
+          h2 {
+            color: #555;
+          }
+
+          button {
+            width: max-content;
+            padding: 7.5px 15px;
+            border: none;
+            cursor: pointer;
+            color: teal;
+            background-color: white;
+            border: 1px solid teal;
+
+            &:hover {
+              border: 1px solid white;
+              background-color: $lightGreen;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+    .add {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+          padding: 10px;
+          border: 1px solid lightgray;
+        }
+
+        .editorContainer {
+          height: 300px;
+          overflow: scroll;
+          border: 1px solid lightgray;
+
+          .editor {
+            height: 100%;
+            border: none;
+          }
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .item {
+          border: 1px solid lightgray;
+          padding: 10px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 12px;
+          color: #555;
+
+          h1 {
+            font-size: 20px;
+          }
+
+          .file {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            :first-child {
+              cursor: pointer;
+              color: teal;
+              background-color: white;
+              border: 1px solid teal;
+              padding: 3px 5px;
+            }
+            :last-child {
+              cursor: pointer;
+              color: white;
+              background-color: teal;
+              border: 1px solid teal;
+              padding: 3px 5px;
+            }
+          }
+
+          .cat {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            color: teal;
           }
         }
       }

@@ -25,6 +25,7 @@ export const register = (req, res) => {
     });
   });
 };
+
 export const login = (req, res) => {
   //CHECK USER
 
@@ -41,14 +42,12 @@ export const login = (req, res) => {
     );
 
     if (!isPasswordCorrect) {
-      return res.status(400).json("incorrected password or userID ");
+      return res.status(400).json("틀린 비밀 번호 또는 아이디 입니다.");
     }
-
     const token = jwt.sign({ id: data[0].id }, "jwtkey");
     const { password, ...other } = data[0];
-
     res
-      .cookie("access_token", token, {
+      .cookie("auth_token", token, {
         httpOnly: true,
       })
       .status(200)
@@ -58,7 +57,7 @@ export const login = (req, res) => {
 
 export const logout = (req, res) => {
   res
-    .clearCookie("access_token", {
+    .clearCookie("auth_token", {
       sameSite: "none",
       secure: true,
     })

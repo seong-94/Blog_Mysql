@@ -30,7 +30,7 @@ function Navbar() {
           <Link className="link" to="/?cat=mysql">
             <h6>Mysql</h6>
           </Link>
-          <span>{currentUser?.username}</span>
+          <span className="username">{currentUser?.username}</span>
           {currentUser ? (
             <span onClick={logout}>Logout</span>
           ) : (

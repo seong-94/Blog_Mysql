@@ -1,8 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-var url = " http://localhost:4000";
-
 export const AuthContext = createContext();
 
 export const AuthContexProvider = ({ children }) => {
@@ -11,12 +9,12 @@ export const AuthContexProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post(url + "/auth/login", inputs);
+    const res = await axios.post("/auth/login", inputs);
     setCurrentUser(res.data);
   };
 
   const logout = async (inputs) => {
-    await axios.post(url + "/auth/logout");
+    await axios.post("/auth/logout");
     setCurrentUser(null);
   };
 
