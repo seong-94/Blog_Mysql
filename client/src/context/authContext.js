@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
+const url = "http://localhost:4000";
+
 export const AuthContexProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null

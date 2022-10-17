@@ -23,7 +23,7 @@ function Single() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(url + `/posts/${postId}`);
+        const res = await axios.get(`/posts/${postId}`);
         setPost(res.data);
       } catch (err) {
         console.log(err);
@@ -34,7 +34,7 @@ function Single() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(url + `/posts/${postId}`);
+      await axios.delete(`/posts/${postId}`);
       navigate("/");
     } catch (err) {
       console.log(err);

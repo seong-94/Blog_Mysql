@@ -33,13 +33,13 @@ function Write() {
 
     try {
       state
-        ? await axios.put(url + `/posts/${state.id}`, {
+        ? await axios.put(`/posts/${state.id}`, {
             title,
             desc: value,
             cat,
             img: file ? imgUrl : "",
           })
-        : await axios.post(url + `/posts/`, {
+        : await axios.post(`/posts/`, {
             title,
             desc: value,
             cat,
